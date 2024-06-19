@@ -42,7 +42,9 @@ class MainActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        //先判斷傳回來的requestCode是哪一個(因為可能有多個權限請求)
         if (requestCode == myRequestCode_cameral) {
+            //再判斷回傳的是許可或不許可
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 activityCameral()
             }
